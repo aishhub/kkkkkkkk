@@ -1,73 +1,30 @@
-import asyncio
-from datetime import datetime
+from pyrogram import filters
 
 import config
+from strings import get_command
 from AnonX import app
-from AnonX.core.call import Anon, autoend
-from AnonX.utils.database import (get_client, is_active_chat,
-                                       is_autoend)
+from AnonX.misc import SUDOERS
+from AnonX.utils.database import autoend_off, autoend_on
+from AnonX.utils.decorators.language import language
+
+# Commands
+AUTOEND_COMMAND = get_command("AUTOEND_COMMAND")
 
 
-async def auto_leave():
-    if config.AUTO_LEAVING_ASSISTANT == str(True):
-        while not await asyncio.sleep(
-            config.AUTO_LEAVE_ASSISTANT_TIME
-        ):
-            from AnonX.core.userbot import assistants
-
-            for num in assistants:
-                client = await get_client(num)
-                try:
-                    async for i in client.iter_dialogs():
-                        chat_type = i.chat.type
-                        if chat_type in [
-                            "supergroup",
-                            "group",
-                            "channel",
-                        ]:
-                            chat_id = i.chat.id
-                            if (
-                                chat_id != config.LOG_GROUP_ID
-                                and chat_id != -1001126273421
-                            ):
-                                if not await is_active_chat(chat_id):
-                                    try:
-                                        await client.leave_chat(
-                                            chat_id
-                                        )
-                                    except:
-                                        continue
-                except:
-                    pass
-
-
-asyncio.create_task(auto_leave())
-
-
-async def auto_end():
-    while not await asyncio.sleep(5):
-        if not await is_autoend():
-            continue
-        for chat_id in autoend:
-            timer = autoend.get(chat_id)
-            if not timer:
-                continue
-            if datetime.now() > timer:
-                if not await is_active_chat(chat_id):
-                    autoend[chat_id] = {}
-                    continue
-                autoend[chat_id] = {}
-                try:
-                    await Anon.stop_stream(chat_id)
-                except:
-                    continue
-                try:
-                    await app.send_message(
-                        chat_id,
-                        "» ʙᴏᴛ ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ ʟᴇғᴛ ᴠɪᴅᴇᴏᴄʜᴀᴛ ʙᴇᴄᴀᴜsᴇ ɴᴏ ᴏɴᴇ ᴡᴀs ʟɪsᴛᴇɴɪɴɢ ᴏɴ ᴠɪᴅᴇᴏᴄʜᴀᴛ.",
-                    )
-                except:
-                    continue
-
-
-asyncio.create_task(auto_end())
+@app.on_message(filters.command(AUTOEND_COMMAND) & SUDOERS)
+async def auto_end_stream(client, message):
+    usage = "**ᴜsᴀɢᴇ:**\n\n/autoend [enable|disable]"
+    if len(message.command) != 2:
+        return await message.reply_text(usage)
+    state = message.text.split(None, 1)[1].strip()
+    state = state.lower()
+    if state == "enable":
+        await autoend_on()
+        await message.reply_text(
+            "ᴀᴜᴛᴏ ᴇɴᴅ sᴛʀᴇᴀᴍ ᴇɴᴀʙʟᴇᴅ.\n\nᴀssɪsᴛᴀɴᴛ ᴡɪʟʟ ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ ʟᴇᴀᴠᴇ ᴛʜᴇ ᴠɪᴅᴇᴏᴄʜᴀᴛ ᴀғᴛᴇʀ ғᴇᴡ ᴍɪɴs ᴡʜᴇɴ ɴᴏ ᴏɴᴇ ɪs ʟɪsᴛᴇɴɪɴɢ ᴡɪᴛʜ ᴀ ᴡᴀʀɴɪɴɢ ᴍᴇssᴀɢᴇ."
+        )
+    elif state == "disable":
+        await autoend_off()
+        await message.reply_text("ᴀᴜᴛᴏ ᴇɴᴅ sᴛʀᴇᴀᴍ ᴅɪsᴀʙʟᴇᴅ.")
+    else:
+        await message.reply_text(usage)
