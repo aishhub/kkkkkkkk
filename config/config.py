@@ -7,27 +7,26 @@ from pyrogram import filters
 
 load_dotenv()
 
-API_ID = int(getenv("API_ID", ""))
-API_HASH = getenv("API_HASH")
-
-BOT_TOKEN = getenv("BOT_TOKEN")
-
-MONGO_DB_URI = getenv("MONGO_DB_URI", None)
+API_ID = int(getenv("API_ID", "18634285"))
+API_HASH = getenv("API_HASH", "f6daa5619fa9d5e10d1f52efa10b39b1")
+BOT_TOKEN = getenv("BOT_TOKEN", "5506930837:AAHJ-5w9cUGELVS8HB_qjtejJ_76BuCCo9Y")
+MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb+srv://ariyan104:ariyan104@cluster0.1iptuzv.mongodb.net/?retryWrites=true&w=majority")
+LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", "-1001126273421"))
+MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME", "ᴀʀɪʏᴀɴ ダ ᴍᴜsɪᴄ​")
+OWNER_ID = list(
+    map(int, getenv("OWNER_ID", "5787575060").split())
+)
+SUPPORT_CHANNEL = getenv(
+    "SUPPORT_CHANNEL", "https://t.me/ariyan_server")
+SUPPORT_GROUP = getenv(
+    "SUPPORT_GROUP", "https://t.me/ariyan_discus")
 
 DURATION_LIMIT_MIN = int(
-    getenv("DURATION_LIMIT", "90")
+    getenv("DURATION_LIMIT", "120")
 )
 
 SONG_DOWNLOAD_DURATION = int(
     getenv("SONG_DOWNLOAD_DURATION_LIMIT", "180")
-)
-
-LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", ""))
-
-MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME", "ᴀɴᴏɴ ダ ᴍᴜsɪᴄ​")
-
-OWNER_ID = list(
-    map(int, getenv("OWNER_ID", "1356469075").split())
 )
 
 HEROKU_API_KEY = getenv("HEROKU_API_KEY")
@@ -36,16 +35,11 @@ HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
 
 UPSTREAM_REPO = getenv(
     "UPSTREAM_REPO",
-    "https://github.com/AnonymousR1025/AnonXMusic",
+    "https://telegra.ph/file/9b0455dae14d5639f936d.mp4",
 )
 UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "master")
 
 GIT_TOKEN = getenv("GIT_TOKEN", None)
-
-SUPPORT_CHANNEL = getenv(
-    "SUPPORT_CHANNEL", "https://t.me/DevilsHeavenMF")
-SUPPORT_GROUP = getenv(
-    "SUPPORT_GROUP", "https://t.me/DevilsHeavenMF")
 
 AUTO_LEAVING_ASSISTANT = getenv("AUTO_LEAVING_ASSISTANT", "False")
 
@@ -58,7 +52,6 @@ AUTO_DOWNLOADS_CLEAR = getenv("AUTO_DOWNLOADS_CLEAR", "True")
 PRIVATE_BOT_MODE = getenv("PRIVATE_BOT_MODE", None)
 
 YOUTUBE_DOWNLOAD_EDIT_SLEEP = int(getenv("YOUTUBE_EDIT_SLEEP", "5"))
-
 TELEGRAM_DOWNLOAD_EDIT_SLEEP = int(getenv("TELEGRAM_EDIT_SLEEP", "6"))
 
 GITHUB_REPO = getenv("GITHUB_REPO", "https://telegra.ph/file/f84d28d91512a445ecce1.mp4")
@@ -67,9 +60,7 @@ SPOTIFY_CLIENT_ID = getenv("SPOTIFY_CLIENT_ID", None)
 SPOTIFY_CLIENT_SECRET = getenv("SPOTIFY_CLIENT_SECRET", None)
 
 VIDEO_STREAM_LIMIT = int(getenv("VIDEO_STREAM_LIMIT", "5"))
-
 SERVER_PLAYLIST_LIMIT = int(getenv("SERVER_PLAYLIST_LIMIT", "50"))
-
 PLAYLIST_FETCH_LIMIT = int(getenv("PLAYLIST_FETCH_LIMIT", "50"))
 
 CLEANMODE_DELETE_MINS = int(
@@ -79,13 +70,12 @@ CLEANMODE_DELETE_MINS = int(
 TG_AUDIO_FILESIZE_LIMIT = int(
     getenv("TG_AUDIO_FILESIZE_LIMIT", "104857600")
 )
-
 TG_VIDEO_FILESIZE_LIMIT = int(
-    getenv("TG_VIDEO_FILESIZE_LIMIT", "1073741824")
+    getenv("TG_VIDEO_FILESIZE_LIMIT", "2073741824")
 )
-# https://www.gbmb.org/mb-to-bytes
 
-STRING1 = getenv("STRING_SESSION", None)
+
+STRING1 = getenv("STRING_SESSION", "BQBRDNZ4jOczyqtX2iakl_ci-QRVi0hVQ5x0B75TkQkLg3HEzkgcnoTSjnV_nAx_aSjP_PLiAKfkkgR7mbSfQV30wDWnuGXbaTHL5Fyf3BOZE12ULim1nPqU1Cw5DejVz7kThtfAO9W5KxC9YODQ3Mig0t_zoK6n5IXXJ7STDwflxtxiDT9peMqaRSpXNT2jXQX0rV9sSO9Kzf0nFiKLXx1D-DKLnYrJ0tACIbqUMOBUPQsuZxPnfcaSMSLw-q1itS08ACEcSyKSLBUHoi4gZH1b5Zoh5shlzO4ShPPIoLj0NuOF1eAWQIQVyS-aReE2Ely653DMzSYLZKs4EMQpUG6uAAAAAUYNJBMA")
 STRING2 = getenv("STRING_SESSION2", None)
 STRING3 = getenv("STRING_SESSION3", None)
 STRING4 = getenv("STRING_SESSION4", None)
@@ -94,7 +84,7 @@ STRING5 = getenv("STRING_SESSION5", None)
 BANNED_USERS = filters.user()
 YTDOWNLOADER = 1
 LOG = 2
-LOG_FILE_NAME = "anonxlogs.txt"
+LOG_FILE_NAME = "nottyylogs.txt"
 adminlist = {}
 lyrical = {}
 chatstats = {}
@@ -103,11 +93,11 @@ clean = {}
 
 autoclean = []
 
-START_IMG_URL = getenv("START_IMG_URL", "https://telegra.ph/file/56d1760224589ee370186.jpg")
+START_IMG_URL = getenv("START_IMG_URL", "https://te.legra.ph/file/f2ce8473706da8aa1edb3.jpg")
 
 PING_IMG_URL = getenv(
     "PING_IMG_URL",
-    "https://telegra.ph/file/56d1760224589ee370186.jpg",
+    "https://te.legra.ph/file/f2ce8473706da8aa1edb3.jpg",
 )
 
 PLAYLIST_IMG_URL = getenv(
@@ -178,8 +168,6 @@ DURATION_LIMIT = int(time_to_seconds(f"{DURATION_LIMIT_MIN}:00"))
 SONG_DOWNLOAD_DURATION_LIMIT = int(
     time_to_seconds(f"{SONG_DOWNLOAD_DURATION}:00")
 )
-
-SUPPORT_HEHE = SUPPORT_GROUP.split("me/")[1]
 
 if UPSTREAM_REPO:
     if not re.match("(?:http|https)://", UPSTREAM_REPO):
