@@ -53,7 +53,7 @@ async def init():
     await Anon.start()
     try:
         await Anon.stream_call(
-            "https://telegra.ph/file/8d5db123638c2f6bb6ce4.mp4"
+            "https://telegra.ph/file/de3464aa7d6bfafdd2dc3.mp4"
         )
     except NoActiveGroupCall:
         LOGGER("AnonX").error(
@@ -63,7 +63,7 @@ async def init():
     except:
         pass
     await Anon.decorators()
-    LOGGER("AnonX").info("Music Bot Started Successfully, Now Gib your girlfriend chumt to @Prince_ariyan_143")
+    LOGGER("AnonX").info("Music Bot Started Successfully, Now Gib your girlfriend chumt to @anonymous_was_bot")
     await idle()
 
 
