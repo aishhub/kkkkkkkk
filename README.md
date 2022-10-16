@@ -6,12 +6,12 @@
 </p>
 
 <p align="center">
-<a href="https://github.com/Devarora-0981/AnonXMusic/stargazers"><img src="https://img.shields.io/github/stars/Devarora-0981/AnonXMusic?color=black&logo=github&logoColor=black&style=for-the-badge" alt="Stars" /></a>
-<a href="https://github.com/Devarora-0981/AnonXMusic/network/members"> <img src="https://img.shields.io/github/forks/Devarora-0981/AnonXMusic?color=black&logo=github&logoColor=black&style=for-the-badge" /></a>
-<a href="https://github.com/Devarora-0981/AnonXMusic/blob/master/LICENSE"> <img src="https://img.shields.io/badge/License-MIT-blueviolet?style=for-the-badge" alt="License" /> </a>
+<a href="https://github.com/Devarora-0981/AnonX/stargazers"><img src="https://img.shields.io/github/stars/Devarora-0981/AnonX?color=black&logo=github&logoColor=black&style=for-the-badge" alt="Stars" /></a>
+<a href="https://github.com/Devarora-0981/AnonX/network/members"> <img src="https://img.shields.io/github/forks/Devarora-0981/AnonX?color=black&logo=github&logoColor=black&style=for-the-badge" /></a>
+<a href="https://github.com/Devarora-0981/AnonX/blob/master/LICENSE"> <img src="https://img.shields.io/badge/License-MIT-blueviolet?style=for-the-badge" alt="License" /> </a>
 <a href="https://www.python.org/"> <img src="https://img.shields.io/badge/Written%20in-Python-orange?style=for-the-badge&logo=python" alt="Python" /> </a>
 <a href="https://pypi.org/project/Pyrogram/"> <img src="https://img.shields.io/pypi/v/pyrogram?color=yellow&label=pyrogram&logo=python&logoColor=green&style=for-the-badge" /></a>
-<a href="https://github.com/Devarora-0981/AnonXMusic/commits/AnonymousR1025"> <img src="https://img.shields.io/github/last-commit/AnonymousR1025/AnonXMusic?color=blue&logo=github&logoColor=green&style=for-the-badge" /></a>
+<a href="https://github.com/Devarora-0981/AnonX/commits/AnonymousR1025"> <img src="https://img.shields.io/github/last-commit/Devarora-0981/AnonX?color=blue&logo=github&logoColor=green&style=for-the-badge" /></a>
 </p>
 
 <p align="center">
